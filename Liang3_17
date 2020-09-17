@@ -1,0 +1,54 @@
+import java.util.*;
+
+public class Problem3_17 {
+	public static void main(String []args) {
+
+		int computerAnswer = getComputerAnswer();
+		System.out.println(" Computer Answer is: " + computerAnswer);
+
+		Scanner input = new Scanner (System.in);
+		int userAnswer = getUserAnswer(input);
+		System.out.println("User Answer is : " + userAnswer);
+		input.close();
+
+		printResults(computerAnswer, userAnswer);
+
+	}
+
+	private static int getComputerAnswer() {
+		return (int)(Math.random()*3);
+	}
+	
+	private static int getUserAnswer(Scanner input) {
+		System.out.println("Please select your input: ");
+		System.out.println("Please press 0 for scissors, 1 for rock, or 2 for paper.");
+		int answer = input.nextInt();
+
+		switch(answer) {
+		case 0:
+			System.out.println("You pressed 0 and have selected scissors.");
+			break;
+		case 1: 
+			System.out.println("You pressed 1 and have selected rock.");
+			break;
+		case 2: 
+			System.out.println("You pressed 2 and have selected paper.");
+			break;
+		default:
+			System.out.println("Hey, can you read? Pick 0, 1, or 2!");
+		}
+		return answer;
+	}
+
+	private static void printResults(int computerAnswer, int userAnswer) {
+		System.out.println("User answer and computer are the same: " + (userAnswer == computerAnswer));
+
+		if(userAnswer == computerAnswer) {
+			System.out.println("Draw!");
+		}
+		else
+		{
+			System.out.println("It's not a draw!");
+		}
+	}
+}
