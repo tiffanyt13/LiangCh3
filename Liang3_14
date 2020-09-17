@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class Problem3_14 {
+	public static void main(String[]args) {
+
+		Scanner input = new Scanner (System.in);
+
+		System.out.print(" Please enter a 0 for heads or a 1 for tails:");
+
+		int answer = input.nextInt();
+
+		switch (answer) {
+
+		case 0:
+			System.out.println("You have selected 0 for heads!");
+
+			break;
+
+		case 1:
+			System.out.println("You have selected 1 for tails!");
+
+			break;
+		default:
+			System.out.println("Numbers aren't your thing are they? Choose 0 or 1.");	
+		}
+
+		double ourRandomNumber = Math.random()*2;
+
+		int coinToss = (int)(ourRandomNumber);
+
+		if(coinToss == answer)
+		{
+			System.out.println("Your guess mattched the toss, you win!");
+		}
+		else {
+			System.out.println("Your guess and the toss did not match. You lose :( ");
+		}
+
+		input.close();
+	}
+}
